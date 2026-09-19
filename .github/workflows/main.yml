@@ -1,0 +1,54 @@
+name: React Nested Route Test
+
+
+on:
+
+  push:
+
+    branches:
+
+      - main
+
+
+  workflow_dispatch:
+
+
+
+jobs:
+
+
+  react-build-test:
+
+
+    runs-on: ubuntu-latest
+
+
+
+    steps:
+
+
+    - name: Checkout Code
+
+      uses: actions/checkout@v4
+
+
+
+    - name: Setup Node.js
+
+      uses: actions/setup-node@v4
+
+      with:
+
+        node-version: 18
+
+
+
+    - name: Install Dependencies
+
+      run: npm install
+
+
+
+    - name: Build React Application
+
+      run: npm run build
